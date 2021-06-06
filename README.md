@@ -48,6 +48,19 @@ O Banco de Dados utilizado no servidor foi o [SQLite 3.35.5 ](https://docs.oracl
 O Servidor trabalha com base nas requisições que partem do [cliente](https://github.com/talesxavier1/Chat_Cliente_Socket_Java). Após a conexão ser estabelecida, O cliente pode enviar [mensagens](https://github.com/talesxavier1/Chat_Server_Socket_Java/blob/main/src/aps/unip/protocolo/Mensagem.java) para o servidor contendo o que deve ser feito e os dados necessários para a execução
 Cada funcionalidade do servidor corresponde a um tipo de requisição e cada requisição possui uma resposta que é enviada ao cliente.
 
+- [Funcionalidades](#)
+  * [Modelo](#Modelo)
+  * [Cadastro](#Cadastro)
+    * [Requisição](#Requisição)
+    * [Resposta de sucesso](#Resposta-de-sucesso)
+    * [Resposta de erro.](#Resposta-de-erro)
+  * [Nova conversa](#Nova-conversa)
+  * [Deletar uma conversa](#Deletar-uma-conversa)
+  * [Mensagem de desconhecido](#Mensagem-de-desconhecido)
+  * [Mensagem off-line](#Mensagem-off-line)
+  * [Mensagem off-line de desconhecido](#Mensagem-off-line-de-desconhecido)
+  * [Excluir contato](#Excluir-contato)
+
 <br>
 
 ##### Modelo.
@@ -103,9 +116,67 @@ Em caso de login efetuado, o cliente pode receber dois tipos de respostas.
 
 <a href="https://imgur.com/nWAwxDU"><img src="https://i.imgur.com/nWAwxDU.png" title="source: imgur.com" height="150" width="320" /></a>
 
+<br>
+
 ##### Buscar um usuário
 
 O cliente pode enviar uma requisição de buscar um usuário para o servidor. A execução dessa requisição busca o usuário com base no id enviado.
 
 - Requisição Buscar um Usuário.
+
 <a href="https://imgur.com/8mPdWKL"><img src="https://i.imgur.com/8mPdWKL.png" title="source: imgur.com" /></a>
+
+- Resposta de Usuário Encontrado.
+
+<a href="https://imgur.com/kCYNITd"><img src="https://i.imgur.com/kCYNITd.png" title="source: imgur.com" /></a>
+
+- Resposta de Usuário Não Encontrado.
+
+<a href="https://imgur.com/RYbtoBD"><img src="https://i.imgur.com/RYbtoBD.png" title="source: imgur.com" /></a>
+
+<br>
+
+##### Buscar Usuários.
+
+O cliente pode enviar uma requisição de buscar usuário para o servidor. A execução dessa requisição busca o usuário com base no nome enviado.
+
+- Requisicao Buscar Usuários.
+
+<a href="https://imgur.com/ovrRmXD"><img src="https://i.imgur.com/ovrRmXD.png" title="source: imgur.com" /></a>
+
+- Resposta Usuários Encontrados.
+
+<a href="https://imgur.com/5ioZTzq"><img src="https://i.imgur.com/5ioZTzq.png" title="source: imgur.com" height="150" width="450" /></a>
+
+O parâmetro usuarios consiste em um [Array]() de Objetos.
+
+|ID usuario|Nome Usuário|Foto Usuário|
+| ------------ | ------------ | ------------ |
+|  usuarios[linha][0] |usuarios[linha][1]   |usuarios[linha][2]   |
+
+<br>
+- Resposta Nenhum Usuário Encontrado.
+
+<a href="https://imgur.com/3mi85BC"><img src="https://i.imgur.com/3mi85BC.png" title="source: imgur.com" /></a>
+
+##### Enviar Mensagem.
+
+O usuário pode enviar uma requisição de encaminhamento de mensagem. O servidor irá enviar a mensagem para o destinatário, se ele estiver online. Caso o Cliente estiver Off-line, a mensagem será arquivada.
+
+- Requisiçao Enviar Mensagem.
+
+<a href="https://imgur.com/We9OLvp"><img src="https://i.imgur.com/We9OLvp.png" title="source: imgur.com" /></a>
+
+- Resposta Mensagem Enviada.
+
+<a href="https://imgur.com/dyusoz3"><img src="https://i.imgur.com/dyusoz3.png" title="source: imgur.com" /></a>
+
+- Resposta Mensagem Arquivada.
+
+<a href="https://imgur.com/UWKs8GD"><img src="https://i.imgur.com/UWKs8GD.png" title="source: imgur.com" /></a>
+
+
+
+
+
+
