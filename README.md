@@ -48,18 +48,28 @@ O Banco de Dados utilizado no servidor foi o [SQLite 3.35.5 ](https://docs.oracl
 O Servidor trabalha com base nas requisições que partem do [cliente](https://github.com/talesxavier1/Chat_Cliente_Socket_Java). Após a conexão ser estabelecida, O cliente pode enviar [mensagens](https://github.com/talesxavier1/Chat_Server_Socket_Java/blob/main/src/aps/unip/protocolo/Mensagem.java) para o servidor contendo o que deve ser feito e os dados necessários para a execução
 Cada funcionalidade do servidor corresponde a um tipo de requisição e cada requisição possui uma resposta que é enviada ao cliente.
 
-- [Funcionalidades](#)
-  * [Modelo](#Modelo)
-  * [Cadastro](#Cadastro)
-    * [Requisição](#teste)
-    * [Resposta de sucesso](#teste2)
-    * [Resposta de erro.](#Resposta-de-erro)
-  * [Nova conversa](#Nova-conversa)
-  * [Deletar uma conversa](#Deletar-uma-conversa)
-  * [Mensagem de desconhecido](#Mensagem-de-desconhecido)
-  * [Mensagem off-line](#Mensagem-off-line)
-  * [Mensagem off-line de desconhecido](#Mensagem-off-line-de-desconhecido)
-  * [Excluir contato](#Excluir-contato)
+- [Funcionalidades.](#Funcionalidades)
+  * [Modelo.](#Modelo)
+  * [Cadastro.](#Cadastro)
+    * Requisição.
+    * Resposta de sucesso
+    * Resposta de erro.
+  * [Login.](#Login)
+    * Requisição de login.
+    * Resposta de sucesso.
+    * Usuário não cadastrado.
+  * [Buscar um usuário.](#Buscar-um-usuário)
+    * Requisição Buscar um Usuário.
+    * Resposta de Usuário Encontrado.
+    * Resposta de Usuário Não Encontrado.
+  * [Buscar Usuários.](#Buscar-Usuários)
+    * Requisicao Buscar Usuários.
+    * Resposta Usuários Encontrados.
+    * Resposta Nenhum Usuário Encontrado.
+  * [Enviar Mensagem.](#Enviar-Mensagem)
+    * Requisiçao Enviar Mensagem.
+    * Resposta Mensagem Enviada.
+    * Resposta Mensagem Arquivada.
 
 <br>
 
@@ -77,12 +87,12 @@ As requisições e respostas possuem uma estrutura definida. A imagem abaixo ilu
 
 O servidor pode fazer o cadastro de um novo usuário. Para fazer o cadastro, o servidor espera uma requisição que a imagem abaixo ilustra.
 
-[](https://github.com/talesxavier1/Chat_Server_Socket_Java#teste)
+
 - Requisição.
 
 <a href="https://imgur.com/6KrYK22"><img src="https://i.imgur.com/6KrYK22.png" title="source: imgur.com" /></a>
 
-[](https://github.com/talesxavier1/Chat_Server_Socket_Java#teste2)
+
 - Resposta de sucesso.
 
 <a href="https://imgur.com/4MONePD"><img src="https://i.imgur.com/4MONePD.png" title="source: imgur.com" /></a>
