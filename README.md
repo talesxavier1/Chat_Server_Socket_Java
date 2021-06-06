@@ -29,7 +29,7 @@ Esse projeto necessita de um cliente para funcionar. O projeto do cliente pode s
 O cliente e o servidor utilizam o protocolo TCP para a sua comunicação. Para construir uma conexão entre os dois pontos, utilizamos a biblioteca [java.net.Socket](https://docs.oracle.com/javase/7/docs/api/java/net/Socket.html) do java. Para a troca de informações, criamos uma classe chamada [Mensagem](https://github.com/talesxavier1/Chat_Server_Socket_Java/blob/main/src/aps/unip/protocolo/Mensagem.java) que fica responsável por carregar os dados de requisição e resposta entre os dois pontos.  
 
 ------------
-#### Banco de Dados
+#### Banco de Dados.
 
 O Banco de Dados utilizado no servidor foi o [SQLite 3.35.5 ](https://docs.oracle.com/javase/7/docs/api/java/net/Socket.html). Os dados dos usuários cadastrados e as mensagens que não foram encaminhadas para os destinatários são armazenados no arquivo [BancoDeDados.db](https://github.com/talesxavier1/Chat_Server_Socket_Java/blob/main/BD/BancoDeDados.db). As imagens abaixo representam a estrutura das tabelas contidas no banco de dados.
 
@@ -43,14 +43,14 @@ O Banco de Dados utilizado no servidor foi o [SQLite 3.35.5 ](https://docs.oracl
 <a href="https://imgur.com/jrdHNv6"><img src="https://i.imgur.com/jrdHNv6.png" title="source: imgur.com" /></a>
 
 ------------
-#### Funcionalidades
+#### Funcionalidades.
 
 O Servidor trabalha com base nas requisições que partem do [cliente](https://github.com/talesxavier1/Chat_Cliente_Socket_Java). Após a conexão ser estabelecida, O cliente pode enviar [mensagens](https://github.com/talesxavier1/Chat_Server_Socket_Java/blob/main/src/aps/unip/protocolo/Mensagem.java) para o servidor contendo o que deve ser feito e os dados necessários para a execução
 Cada funcionalidade do servidor corresponde a um tipo de requisição e cada requisição possui uma resposta que é enviada ao cliente.
 
 <br>
 
-##### Modelo
+##### Modelo.
 
 As requisições e respostas possuem uma estrutura definida. A imagem abaixo ilustra a estrutura básica das requisições.
 
@@ -60,30 +60,35 @@ As requisições e respostas possuem uma estrutura definida. A imagem abaixo ilu
 - STATUS: Esse campo só terá valor atribuído nas resposta de requisição que partem do servidor para o cliente. Os possíveis valores para esse campo podem ser observados [aqui](https://github.com/talesxavier1/Chat_Server_Socket_Java/blob/main/src/aps/unip/enums/Status.java).
 - Parâmetro: Esse campo é um [Map](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html) com chave do tipo [String](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html) e valor do tipo [Object](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html).
 
-##### Cadastro
+##### Cadastro.
 
 O servidor pode fazer o cadastro de um novo usuário. Para fazer o cadastro, o servidor espera uma requisição que a imagem abaixo ilustra.
 
 - Requisição.
+
 <a href="https://imgur.com/6KrYK22"><img src="https://i.imgur.com/6KrYK22.png" title="source: imgur.com" /></a>
 
 - Resposta de sucesso.
+
 <a href="https://imgur.com/4MONePD"><img src="https://i.imgur.com/4MONePD.png" title="source: imgur.com" /></a>
 
 - Resposta de erro.
+
 <a href="https://imgur.com/h0QaoJ2"><img src="https://i.imgur.com/h0QaoJ2.png" title="source: imgur.com" /></a>
 
 Essa resposta pode ocorrer caso algum dado esteja faltando ou um usuário já esteja cadastrado com o e-mail enviado. As informações sobre o erro do cadastro ficam dentro do parâmetro mensagem.
 
 
-##### Login
+##### Login.
 
 O servidor pode executar o login de usuários cadastrados. A requisição e reposta do login são ilustradas pelas imagens abaixo.
 
 - Requisição de login.
+
 <a href="https://imgur.com/g4oXCKu"><img src="https://i.imgur.com/g4oXCKu.png" title="source: imgur.com" height="195" width="295" /></a>
 
 - Respostas de sucesso.
+
 <a href="https://imgur.com/UAKVpvs"><img src="https://i.imgur.com/UAKVpvs.png" title="source: imgur.com" height="384" width="364" /></a>
 
 Em caso de login efetuado, o cliente pode receber dois tipos de respostas.
@@ -94,7 +99,8 @@ Em caso de login efetuado, o cliente pode receber dois tipos de respostas.
 |Com mensagem arquivada|  caso tenha recebido alguma mensagem enquanto estava off-line. |
 
 
-- Usuário não cadastrado
+- Usuário não cadastrado.
+
 <a href="https://imgur.com/nWAwxDU"><img src="https://i.imgur.com/nWAwxDU.png" title="source: imgur.com" height="150" width="320" /></a>
 
 ##### Buscar um usuário
